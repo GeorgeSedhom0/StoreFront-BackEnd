@@ -163,9 +163,13 @@ will return the deleted product form the order
 Column | Type | Collation | Nullable | Default
 
 ------------+-------------------+-----------+--
+
 id | integer | | not null | nextval('users_id_seq'::regclass)
+
 first_name | character varying | | |
+
 last_name | character varying | | |
+
 password | character varying | | |
 
 "users_pkey" PRIMARY KEY, btree (id)
@@ -175,9 +179,13 @@ TABLE "orders" CONSTRAINT "orders_user_id_fkey" FOREIGN KEY (user_id) REFERENCES
 ### orders
 
 Column | Type | Collation | Nullable | Default
+
 ---------+-------------------+-----------+----
+
 id | integer | | not null | nextval('orders_id_seq'::regclass)
+
 status | character varying | | |
+
 user_id | integer | | |
 
 "orders_pkey" PRIMARY KEY, btree (id)
@@ -189,10 +197,15 @@ TABLE "orders_products" CONSTRAINT "orders_products_order_id_fkey" FOREIGN KEY (
 ### products
 
 Column | Type | Collation | Nullable | Default
+
 ----------+-------------------+-----------+----
+
 id | integer | | not null | nextval('products_id_seq'::regclass)
+
 name | character varying | | |
+
 quantity | integer | | |
+
 price | double precision | | |
 
 Indexes:
@@ -203,9 +216,13 @@ TABLE "orders_products" CONSTRAINT "orders_products_product_id_fkey" FOREIGN KEY
 ### orders_products
 
 Column | Type | Collation | Nullable | Default
+
 ------------+---------+-----------+----------+---------
+
 quantity | integer | | |
+
 order_id | integer | | |
+
 product_id | integer | |
 
 Foreign-key constraints:
