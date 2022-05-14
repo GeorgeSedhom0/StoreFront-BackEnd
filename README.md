@@ -161,6 +161,7 @@ will return the deleted product form the order
 ### users
 
 Column | Type | Collation | Nullable | Default
+
 ------------+-------------------+-----------+--
 id | integer | | not null | nextval('users_id_seq'::regclass)
 first_name | character varying | | |
